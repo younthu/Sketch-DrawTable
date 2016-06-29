@@ -1,0 +1,17 @@
+{
+    "name" : "Draw Table",
+    "identifier" : "com.fooldragon.drawtable",
+    "version" : "1.0.1",
+    "description" : "Draw table with path",
+    "authorEmail" : "evil_eve_live@outlook.com",
+    "author" : "Andrew Yang",
+    "commands" : [
+    {
+      "script" : "draw-table.js",
+      "handler" : "onRun",
+      "shortcut" : "",
+      "name" : "Draw Table",
+      "identifier" : "drawtable"
+    }
+  ]
+}
