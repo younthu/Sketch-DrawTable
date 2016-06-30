@@ -7,7 +7,7 @@ Sketch Plugin for drawing table
 
 # Screenshots
 
-![screenshot 1](screenshots/screenshot2.png)
+![screenshot 1](screenshots/screenshot2.png =312x395)
 
 # Install
 
