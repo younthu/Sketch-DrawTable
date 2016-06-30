@@ -7,7 +7,12 @@ Sketch Plugin for drawing table
 
 # Screenshots
 
+Configure table, number of rows and number of columns, cell width, cell height
+
 ![screenshot 2](screenshots/configuration.png)
+
+
+All shapes are named with index
 
 ![screenshot 1](screenshots/screenshot2.png)
 
