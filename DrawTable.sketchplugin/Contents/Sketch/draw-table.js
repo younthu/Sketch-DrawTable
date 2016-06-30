@@ -1,6 +1,56 @@
+function getConfiguration(){
+    //
+    // var accessory = NSComboBox.alloc().initWithFrame(NSMakeRect(0,0,200,25))
+    // accessory.addItemsWithObjectValues(items)
+    // accessory.selectItemAtIndex(selectedItemIndex)
+
+    var alert = COSAlertWindow.alloc().init()
+    alert.setMessageText("Draw Table")
+
+    alert.setInformativeText('Configure your table');
+
+
+    alert.addTextLabelWithValue('Number of rows for talbe');
+    alert.addTextFieldWithValue('5');
+
+
+    alert.addTextLabelWithValue('Number of columns for talbe');
+    alert.addTextFieldWithValue('5');
+
+
+    alert.addTextLabelWithValue('cell width');
+    alert.addTextFieldWithValue('30');
+
+
+    alert.addTextLabelWithValue('cell height');
+    alert.addTextFieldWithValue('30');
+
+    alert.addButtonWithTitle('OK')
+    alert.addButtonWithTitle('Cancel')
+    // alert.setAccessoryView(accessory)
+
+    var responseCode = alert.runModal()
+    var rowNum = [[alert viewAtIndex:1] floatValue]
+    var colNum = [[alert viewAtIndex:3] floatValue]
+    var cellWidth = [[alert viewAtIndex:5] floatValue]
+    var cellHeight = [[alert viewAtIndex:7] floatValue]
+
+    return [responseCode, rowNum,colNum, cellWidth, cellHeight]
+}
 
 function onRun(context) {
+
   var cellWidth = 10, cellHeight = 10, columNum = 5, rowNum = 5, startX = 10, startY = 10;
+  var configure = getConfiguration()
+  log(configure);
+  if (!configure[0]) {
+    return; // user cancelled
+  }
+  rowNum = configure[1]
+  columNum = configure[2]
+  cellWidth = configure[3]
+  cellHeight = configure[4]
+
   var doc = context.document;
 
   var group = MSLayerGroup.alloc().init();
